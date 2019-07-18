@@ -27,3 +27,44 @@ Add a dependency to the library in your pom.xml
         <artifactId>progressify-spring</artifactId> 
         <version>0.1.0</version> 
     </dependency>
+    
+### Step 2
+
+Configure the compiler plugin to use the annotation processor
+
+    <plugin> 
+        <artifactId>maven-compiler-plugin</artifactId> 
+        <configuration> 
+            <annotationProcessorPaths> 
+                <path> 
+                    <groupId>org.progressify</groupId> 
+                    <artifactId>progressify-spring</artifactId> 
+                    <version>0.1.0</version> 
+                </path>
+            </annotationProcessorPaths>
+        </configuration> 
+    </plugin>
+    
+### Step 3
+
+Annotate your spring code. All annotations closely match existing [Workbox caching strategies](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies). Check the <a target="_blank" href="">API doc</a> for the list of available annoations.
+
+For example, let us say you have an about page mapped to the path "/about". You would typically map this path to a java method in a Spring Web Conrtoller like this:
+
+    @GetMapping(value="/about")
+    public String about(){
+        //
+    } 
+    
+ If you want your browser clients to always cache the about page, just add an @CacheFirst annotation to the same method. 
+ 
+     @CacheFirst    
+     @GetMapping(value="/about")
+     public String about(){
+         //
+     } 
+     
+This will ensure that your about page is always picked from the cache first. If the page is not available in the cache, the service worker would reach out to the server to retrieve the about page. 
+
+
+ 
