@@ -78,7 +78,7 @@ Here is how the generated javascript code for this annotation would look like:
 
     workbox.routing.registerRoute(
         new RegExp('/about'),
-        new workbox.strategies.StaleWhileRevalidate({
+        new workbox.strategies.CacheFirst({
         })
     );
 
