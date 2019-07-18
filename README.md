@@ -19,11 +19,11 @@ progressify-spring provides an annotation processor and a set of annotations tha
 
 Since all annotations defined by this tool are marked with RetentionPolicy.SOURCE, they are discarded by the compiler. Hence it introduces no impact to the rest of the Spring Application.
 
-You can now use your generated serviceworker javascript in your web pages.
+You can use your generated serviceworker javascript in your web pages.
 
 ## <a id="#usage">Usage</a>
 
-The following steps describes how to integrate the library with a Maven based build system.
+The following steps describes how to integrate the progressify-spring with a Maven based build system.
 
 ### Step 1
 
