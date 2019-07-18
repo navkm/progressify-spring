@@ -1,7 +1,7 @@
 # progressify-spring Release 0.1
 
 *   [Introduction](#intro)
-*   [How is works](#intro)
+*   [How is works](#how)
 *   [Usage](#usage)
 *   [API](#api)
 *   [API Documentation](#apidoc)
@@ -12,7 +12,7 @@
 
 progressify-spring uses [Google's Workbox library](https://developers.google.com/web/tools/workbox/) to implement the service worker.
 
-## <a id="#intro">How it works</a>
+## <a id="#how">How it works</a>
 
 progressify-spring provides an annotation processor and a set of annotations that you can use in conjunction with Spring WebMVC annotations to generate a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/). The annotation processor runs during the compilation phase and inspects the Spring code for annotations that it understands to generate the service worker.
 
@@ -96,8 +96,19 @@ Here is how the generated javascript code for this annotation would look like:
         }
     </script>
     
- ## <a id="#api">The API</a>
+## <a id="#api">The API</a>
+
+Currently the following annotations are supported:
+
+*   @PWA
+*   @CacheOnly
+*   @CacheFirst
+*   @NetworkOnly
+*   @NetworkFirst
+*   @StaleWhileRevalidate
+
  
+ ## <a id="#apidoc">API Documentation</a>
 
  
  
