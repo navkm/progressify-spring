@@ -5,6 +5,7 @@
 *   [Usage](#usage)
 *   [API](#api)
 *   [API Documentation](#apidoc)
+*   [Getting Help](#help)
 
 ## <a id="#intro">Introduction</a>
 
@@ -116,5 +117,13 @@ You can override these defaults using the @PWA annotation
  
  ## <a id="#apidoc">API Documentation</a>
 
+[Java API Docs](http://progressify.org/0.1.0/apidocs/)
+ 
+ ## <a id="#help">Getting Help</a>
+ 
+ *   Questions - Please post questions to stakoverflow with tag [progressify-spring]
+ *   Enhancement Requests - Please create a [new issue](https://github.com/navkm/progressify-spring/issues) 
+ 
+ 
  
  
