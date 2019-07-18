@@ -107,6 +107,12 @@ Currently the following annotations are supported:
 *   @NetworkFirst
 *   @StaleWhileRevalidate
 
+By default, the generated service worker is called **sw.js** and it put in a project folder **src/main/resources/static**
+
+You can override these defaults using the @PWA annotation
+
+    @PWA(swFileName="serviceworker.js", swDirectory="/afolder")
+
  
  ## <a id="#apidoc">API Documentation</a>
 
