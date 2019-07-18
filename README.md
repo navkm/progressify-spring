@@ -1,5 +1,11 @@
 # progressify-spring Release 0.1
 
+*   [Introduction](#intro)
+*   [How is works](#intro)
+*   [Usage](#usage)
+*   [API](#api)
+*   [API Documentation](#apidoc)
+
 ## <a id="#intro">Introduction</a>
 
 **progressify-spring** is a build tool that can dynamically generate a [javascript service worker](https://developers.google.com/web/fundamentals/primers/service-workers/) for a [Spring Web application](https://spring.io/guides/gs/serving-web-content/). It can be integrated with any existing java build process and doesn't bring in any new dependencies to the Java code.
@@ -47,7 +53,7 @@ Configure the compiler plugin to use the annotation processor
     
 ### Step 3
 
-Annotate your spring code. All annotations closely match existing [Workbox caching strategies](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies). Check the <a target="_blank" href="">API doc</a> for the list of available annoations.
+Annotate your spring code. All annotations closely match existing [Workbox caching strategies](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies). Check the <a target="_blank" href="">API doc</a> for the list of available annotations.
 
 For example, let us say you have an about page mapped to the path "/about". You would typically map this path to a java method in a Spring Web Conrtoller like this:
 
@@ -66,5 +72,32 @@ For example, let us say you have an about page mapped to the path "/about". You 
      
 This will ensure that your about page is always picked from the cache first. If the page is not available in the cache, the service worker would reach out to the server to retrieve the about page. 
 
+<img src="https://developers.google.com/web/tools/workbox/images/modules/workbox-strategies/cache-first.png" width='300' />
 
+Here is how the generated javascript code for this annotation would look like:
+
+    workbox.routing.registerRoute(
+        new RegExp('/about'),
+        new workbox.strategies.StaleWhileRevalidate({
+        })
+    );
+
+ ### Step 4
+ 
+ Use the generated service worker in your Web Pages
+ 
+ You can register the serviceworker in your Web Pages:
+ 
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+    
+ ## <a id="#api">The API</a>
+ 
+
+ 
  
