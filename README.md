@@ -1,4 +1,4 @@
-# progressify-spring Release 0.1
+# progressify-spring 0.1.0
 
 *   [Introduction](#intro)
 *   [How is works](#how)
