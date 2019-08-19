@@ -7,14 +7,50 @@ public class StrategyResult implements Result{
     private List<String> values;
     private String comment;
     private String cacheName;
+    private Integer networkTimeoutSeconds;
+    private Boolean cacheQueryIgnoreSearch = false;
+    private Boolean cacheQueryIgnoreMethod = false;
+    private Boolean cacheQueryIgnoreVary = false;
 
-    public StrategyResult(String key,List<String> values,String comment,String cacheName){
-        this.key=key;
-        this.values=values;
-        this.comment=comment;
-        this.cacheName=cacheName;
+    public StrategyResult(String key, List<String> values, String comment) {
+        this.key = key;
+        this.values = values;
+        this.comment = comment;
     }
-    public String getKey(){
+
+    public Boolean getCacheQueryIgnoreVary() {
+        return cacheQueryIgnoreVary;
+    }
+
+    public void setCacheQueryIgnoreVary(Boolean cacheQueryIgnoreVary) {
+        this.cacheQueryIgnoreVary = cacheQueryIgnoreVary;
+    }
+
+    public Boolean getCacheQueryIgnoreMethod() {
+        return cacheQueryIgnoreMethod;
+    }
+
+    public void setCacheQueryIgnoreMethod(Boolean cacheQueryIgnoreMethod) {
+        this.cacheQueryIgnoreMethod = cacheQueryIgnoreMethod;
+    }
+
+    public Boolean getCacheQueryIgnoreSearch() {
+        return cacheQueryIgnoreSearch;
+    }
+
+    public void setCacheQueryIgnoreSearch(Boolean cacheQueryIgnoreSearch) {
+        this.cacheQueryIgnoreSearch = cacheQueryIgnoreSearch;
+    }
+
+    public Integer getNetworkTimeoutSeconds() {
+        return networkTimeoutSeconds;
+    }
+
+    public void setNetworkTimeoutSeconds(Integer networkTimeoutSeconds) {
+        this.networkTimeoutSeconds = networkTimeoutSeconds;
+    }
+
+    public String getKey() {
         return key;
     }
 

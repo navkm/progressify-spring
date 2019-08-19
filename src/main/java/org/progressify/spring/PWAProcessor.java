@@ -1,5 +1,6 @@
 package org.progressify.spring;
 
+import java.lang.management.PlatformLoggingMXBean;
 import java.util.*;
 import java.util.logging.*;
 import javax.annotation.processing.*;
@@ -101,7 +102,11 @@ public class PWAProcessor extends AbstractProcessor {
                 List<String> values = sr.getValueList();
                 for (String val : values) {
                     b.add(new Comment(sr.getComment(), true));
-                    b.add(new RegisterRouteStatement(sr.getKey(), val, sr.getCacheName()));
+                    RegisterRouteStatement rStmt = new RegisterRouteStatement(sr.getKey(), val, sr.getCacheName(),sr.getNetworkTimeoutSeconds());
+                    rStmt.setCacheQueryIgnoreMethod(sr.getCacheQueryIgnoreMethod());
+                    rStmt.setCacheQueryIgnoreSearch(sr.getCacheQueryIgnoreSearch());
+                    rStmt.setCacheQueryIgnoreVary(sr.getCacheQueryIgnoreVary());
+                    b.add(rStmt);
                 }
             } else if(result instanceof ConfigResult){
                 ConfigResult cr = (ConfigResult)result;
@@ -111,6 +116,11 @@ public class PWAProcessor extends AbstractProcessor {
                 if(cr.getSwFileName() != null){
                     b.setFileName(cr.getSwFileName());
                 }
+            } else if(result instanceof PreCacheResult){
+                PreCacheResult pr = (PreCacheResult)result;
+                PreCacheStatement prStmt = new PreCacheStatement(pr);
+                b.add(prStmt);
+                
             }
         }
         try {
@@ -134,6 +144,7 @@ public class PWAProcessor extends AbstractProcessor {
         Set<String> s = new HashSet<String>();
         s.addAll(ProcessorFactory.strategies);
         s.addAll(ProcessorFactory.configs);
+        s.addAll(ProcessorFactory.precache);
         return s;
     }
 

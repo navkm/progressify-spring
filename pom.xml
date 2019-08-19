@@ -6,7 +6,7 @@
 
   <groupId>org.progressify</groupId>
   <artifactId>progressify-spring</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 
   <name>progressify-spring</name>
   <description>A build tool that can dynamically generate a javascript service worker for a Spring Web application</description>

@@ -13,5 +13,9 @@ import java.lang.annotation.Target;
 public @interface NetworkFirst {
     
     String cacheName() default "";
+    boolean cacheQueryIgnoreSearch() default false;
+    boolean cacheQueryIgnoreMethod() default false;
+    boolean cacheQueryIgnoreVary() default false;
+    int networkTimeoutSeconds() default -1;
 
 }

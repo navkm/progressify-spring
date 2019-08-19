@@ -13,6 +13,9 @@ import java.lang.annotation.Target;
 public @interface CacheFirst {
     
    String cacheName() default "";
+   boolean cacheQueryIgnoreSearch() default false;
+   boolean cacheQueryIgnoreMethod() default false;
+   boolean cacheQueryIgnoreVary() default false;
 
 }
 

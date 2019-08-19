@@ -36,7 +36,7 @@ public class Builder {
     
     public void flushToFile() throws IOException {
 
-        System.out.println("\n\n\n Flushing out to "+directory+" file:"+fileName);
+        //System.out.println("\n\n\n Flushing out to "+directory+" file:"+fileName);
         File parent = new File(directory);
         if (!parent.exists()) {
             parent.mkdir();
