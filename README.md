@@ -1,4 +1,4 @@
-# progressify-spring 0.1.0
+# progressify-spring 0.2.0
 
 *   [Introduction](#intro)
 *   [How is works](#how)
@@ -107,6 +107,7 @@ Currently the following annotations are supported:
 *   @NetworkOnly
 *   @NetworkFirst
 *   @StaleWhileRevalidate
+*   @PreCache
 
 By default, the generated service worker is called **sw.js** and it put in a project folder **src/main/resources/static**
 
@@ -117,7 +118,7 @@ You can override these defaults using the @PWA annotation
  
  ## <a id="#apidoc">API Documentation</a>
 
-[Java API Docs](http://progressify.org/0.1.0/apidocs/)
+[Java API Docs](http://progressify.org/0.2.0/apidocs/)
  
  ## <a id="#help">Getting Help</a>
  
