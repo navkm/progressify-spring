@@ -32,7 +32,7 @@ Add a dependency to the library in your pom.xml
     <dependency> 
         <groupId>org.progressify</groupId> 
         <artifactId>progressify-spring</artifactId> 
-        <version>0.1.0</version> 
+        <version>0.2.0</version> 
     </dependency>
     
 ### Step 2
@@ -46,7 +46,7 @@ Configure the compiler plugin to use the annotation processor
                 <path> 
                     <groupId>org.progressify</groupId> 
                     <artifactId>progressify-spring</artifactId> 
-                    <version>0.1.0</version> 
+                    <version>0.2.0</version> 
                 </path>
             </annotationProcessorPaths>
         </configuration> 
